@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p th:text="'hello '+ ${name}">hello ! empty</p>
+<!--hello ${name}은 데이터가 들어왔을 때 보여질 형식이고,
+hello! empty는 그냥 데이터값 없이 페이지 확인하려고 써놓은것.
+데이터 들어오면 empty는 안보이고 hello name 으로 보일것임-->
+</body>
+</html>
