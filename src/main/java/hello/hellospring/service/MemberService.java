@@ -24,13 +24,14 @@ public class MemberService {
 
     //회원가입
     public Long join(Member member){
-        //같은 이름이 있는 중복 회원은 가입 안된다!
-        //어차피 결과값은 optional로 나오니까 바로 .ifPresent붙임
-        validateDuplicateMember(member); //중복회원 검증
-        //null일 가능성이 있으면 optional로 요즘은 감싸는 추세
 
-        memberRepository.save(member);
-        return member.getId();
+            //같은 이름이 있는 중복 회원은 가입 안된다!
+            //어차피 결과값은 optional로 나오니까 바로 .ifPresent붙임
+            validateDuplicateMember(member); //중복회원 검증
+            //null일 가능성이 있으면 optional로 요즘은 감싸는 추세
+            memberRepository.save(member);
+            return member.getId();
+
     }
 
     private void validateDuplicateMember(Member member) {
@@ -45,7 +46,7 @@ public class MemberService {
         //보통 서비스 클래스는 비즈니스에 의존적으로 설계하기때문에 비즈니스적인 네임을 써야함
         return memberRepository.findAll();
 
-    }
+        }
 
     public Optional<Member> findOne(Long memberId){
         return memberRepository.findById(memberId);
